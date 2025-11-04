@@ -1,0 +1,214 @@
+/* ================================
+   FONT IMPORTS
+=================================== */
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* ================================
+   GLOBAL RESET & BASE
+=================================== */
+
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #420c4b;
+
+  background-image: repeating-linear-gradient(
+      to right,
+      transparent 0 100px,
+      #ffffff 100px 101px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 100px,
+      #ffe0e0 100px 101px
+    );
+
+  background-blend-mode: soft-light;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* ================================
+   BACKGROUND IMAGE OVERLAY
+=================================== */
+.main::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: min(1400px, 90vw);
+  height: 90%;
+  transform: translateX(-50%);
+  background: url(/bg.png) top center / 100% no-repeat;
+  pointer-events: none;
+}
+
+/* ================================
+   BANNER SECTION
+=================================== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ================================
+   SLIDER (3D ROTATION)
+=================================== */
+.banner .slider {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 200px;
+  height: 250px;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+    translateZ(550px);
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ================================
+   CONTENT SECTION
+=================================== */
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  padding-bottom: 100px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+/* ================================
+   TITLE STYLING
+=================================== */
+.banner .content .title {
+  font-family: 'ICA Rubrik', sans-serif;
+  font-size: 12em;
+  line-height: 1;
+  color: #36253b;
+  position: relative;
+  user-select: none;
+}
+
+.banner .content .title::after {
+  content: attr(data-content);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px #d2d2d2;
+  z-index: 2;
+}
+
+/* ================================
+   AUTHOR / SUBTEXT
+=================================== */
+.banner .content .author {
+  font-family: 'Poppins', sans-serif;
+  text-align: right;
+  max-width: 200px;
+  color: red;
+}
+
+.banner .content .author h2 {
+  font-size: 3em;
+}
+
+/* ================================
+   MODEL IMAGE
+=================================== */
+.banner .content .model {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75vh;
+  background: url(/model.png) top center / auto 130% no-repeat;
+  z-index: 1;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+=================================== */
+
+/* --- Tablet View --- */
+@media (max-width: 1023px) {
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+  }
+
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+      translateZ(300px);
+  }
+
+  .banner .content .title {
+    width: 100%;
+    text-align: center;
+    font-size: 7em;
+    text-shadow: 0 10px 20px #000;
+  }
+
+  .banner .content .author {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 10px 20px #000;
+    width: 100%;
+    padding: 0 30px;
+    z-index: 2;
+  }
+}
+
+/* --- Mobile View --- */
+@media (max-width: 767px) {
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+  }
+
+  .banner .slider .item {
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+      translateZ(180px);
+  }
+
+  .banner .content .title {
+    font-size: 5em;
+  }
+}

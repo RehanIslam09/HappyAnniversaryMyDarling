@@ -1,0 +1,112 @@
+/* ─────────────────────────────
+   Global Styles for Whole Website
+──────────────────────────────*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set smooth scrolling for all */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Great Vibes', cursive;
+  height: 100%;
+}
+
+/* Romantic gradient background */
+body {
+  height: 100%;
+  /* Dark aesthetic gradient with a very small, elegant pink glow */
+  background: linear-gradient(
+    135deg,
+    rgb(18, 0, 25) 0%,
+    /* deep near-black violet base */ rgb(40, 0, 50) 35%,
+    /* muted plum tone */ rgb(65, 0, 85) 70%,
+    /* elegant dark purple midtone */ rgb(90, 0, 100) 92%,
+    /* faint magenta tint */ rgba(255, 0, 169, 0.06) 96%,
+    /* subtle highlight */ rgba(255, 0, 169, 0.03) 100%
+      /* almost invisible fade end */
+  );
+  background-attachment: fixed;
+  color: #fce4ec;
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 0, 169, 0.12),
+      transparent 70%
+    ),
+    radial-gradient(circle at 70% 70%, rgba(255, 0, 169, 0.08), transparent 70%);
+  animation: shimmer 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.4;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(-15px);
+  }
+}
+
+/* Beautiful typography */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Great Vibes', cursive;
+  color: #fff0f5;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(255, 182, 193, 0.4);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ffe6f0;
+}
+
+a {
+  color: #ffd6e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffb6c1;
+}
+
+/* Centered layout for main content */
+main {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* Glow effect on main images */
+main img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px #ffc1cc);
+}
+
+/* Smooth transition for all elements */
+* {
+  transition: all 0.3s ease;
+}
