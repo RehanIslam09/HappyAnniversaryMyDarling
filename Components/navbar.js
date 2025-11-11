@@ -34,12 +34,6 @@ export default function Navbar() {
           <li>
             <Link href={'/gallery'}>Gallery</Link>
           </li>
-          <li>
-            <Link href={'/special'}>Special</Link>
-          </li>
-          <li>
-            <Link href={'/surprise'}>Surprise</Link>
-          </li>
         </ul>
       </nav>
     </>

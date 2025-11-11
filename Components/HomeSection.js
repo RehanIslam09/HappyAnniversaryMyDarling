@@ -23,24 +23,18 @@ export default function HomeSection() {
       <div className={styles.cardRight}>
         <h2 className={styles.poemTitle}>My Love Poem for You</h2>
         <p className={styles.poem}>
-          Your smile is my sunrise, <br />
-          Your touch, my gentle breeze. <br />
-          In your eyes, I find my home, <br />
-          My heart forever at ease. 💞 <br />
-          Your smile is my sunrise, <br />
+          A year has passed, my darling, yet your gaze still dawns in me, <br />
+          Like sunlight breaking through dark clouds, falling on the silent sea.{' '}
           <br />
-          Your touch, my gentle breeze. <br />
-          In your eyes, I find my home, <br />
-          My heart forever at ease. 💞 <br />
-          Your smile is my sunrise, <br />
-          Your touch, my gentle breeze. <br />
           <br />
-          In your eyes, I find my home, <br />
-          My heart forever at ease. 💞 <br />
-          Your smile is my sunrise, <br />
-          In your eyes, I find my home, <br />
-          My heart forever at ease. 💞 <br />
-          Your smile is my sunrise, <br />
+          Do you recall the first soft hour we met..? <br />
+          The world was still, as my eyes met yours, Fate wove a thousand tales,
+          and since then, <br />
+          Every moon has carried your name, Every wind has sought your scent, my
+          darling.
+          <br /> My nights have turned to gardens, watered by your memory,
+          <br />
+          And I am the traveler who never left your heart's gate.
         </p>
       </div>
     </section>
