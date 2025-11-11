@@ -21,7 +21,7 @@ export default function HomeSection() {
       </div>
 
       <div className={styles.cardRight}>
-        <h2 className={styles.poemTitle}>My Love Poem for You</h2>
+        <h2 className={styles.poemTitle}>I love you, my darling..!</h2>
         <p className={styles.poem}>
           A year has passed, my darling, yet your gaze still dawns in me, <br />
           Like sunlight breaking through dark clouds, falling on the silent sea.{' '}
