@@ -132,7 +132,8 @@
     top: 70px;
     right: -100%;
     width: 65%;
-    height: calc(100% - 70px);
+    height: 100vh; /* ✅ FIXED — no more double scroll */
+    overflow-y: auto; /* allows scrolling inside menu */
     background: rgba(255, 182, 193, 0.12);
     backdrop-filter: blur(14px);
     flex-direction: column;

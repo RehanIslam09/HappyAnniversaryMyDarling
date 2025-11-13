@@ -13,12 +13,10 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Great Vibes', cursive;
-  height: 100%;
 }
 
 /* Romantic gradient background */
 body {
-  height: 100%;
   /* Dark aesthetic gradient with a very small, elegant pink glow */
   background: linear-gradient(
     135deg,
@@ -110,3 +108,10 @@ main img {
 * {
   transition: all 0.3s ease;
 }
+
+.galleryPage {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: block;
+}
+
